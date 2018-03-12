@@ -1,3 +1,5 @@
+package Magpie;
+
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -42,6 +44,24 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (statement.indexOf("cat") >= 0 || statement.indexOf("dog") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Mr. Robinson") >= 0) {
+			response = "He sounds like a good mentor.";
+		}
+		else if (statement.trim().length() == 0){
+			response = "Say something, please.";
+		}
+		else if (statement.indexOf("birthday") >= 0) {
+			response = "Happy birthday!";
+		}
+		else if (statement.indexOf("chatbot") >= 0) {
+			response = "That is what I am";
+		}
+		else if (statement.indexOf("robot") >= 0) {
+			response = "I am indeed a robot";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -55,7 +75,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +95,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "How interesting.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "Really?";
 		}
 
 		return response;
