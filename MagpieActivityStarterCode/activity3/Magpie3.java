@@ -1,3 +1,5 @@
+package Magpie;
+
 /**
  * A program to carry on conversations with a human user.
  * This version: 
@@ -44,6 +46,21 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if(findKeyword(statement, "cat") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if(findKeyword(statement, "Mr. Robinson") >= 0) {
+			response = "He sounds like a good mentor.";
+		}
+		else if(findKeyword(statement, "birthday") >= 0) {
+			response = "Happy Birthday!";
+		}
+		else if(findKeyword(statement, "chatbot") >= 0) {
+			response = "That is what I am";
+		}
+		else if(findKeyword(statement, "robot") >= 0) {
+			response = "I am indeed a robot";
 		}
 		else
 		{
@@ -140,7 +157,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -160,6 +177,12 @@ public class Magpie3
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if(whichResponse == 4) {
+			response = "How interesting.";
+		}
+		else if(whichResponse == 5) {
+			response = "Really?";
 		}
 
 		return response;
